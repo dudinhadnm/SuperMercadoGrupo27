@@ -35,19 +35,17 @@ public class Supermercado {
 	}
 	
 	public Limpeza leLimpeza (){
-
-		String [] valores = new String [3];
-		String [] nomeVal = {"Código", "Nome", "Fornecedor"};
-		valores = leValores (nomeVal);
-		String [] opcTipo = {"Sabão", "Desinfetante", "Detergente"};
+		int j = 1;
+		String [] valores = leValores (Produto.getInfoProduto());
 		String menu = "QUAL O TIPO DE PRODUTO DE LIMPEZA?\n\n" +
-				"Opções:\n" + 
-				"1. "+ opcTipo[0] +"\n" +
-				"2. "+ opcTipo[1] +"\n" +
-				"3. "+ opcTipo[2] +"\n";
+				"Opções:\n"; 
+		for (String i : Limpeza.getOpcLimpeza()) {
+			menu += j + ". "+i+"\n";
+			j+=1;
+		}
 		String entrada = JOptionPane.showInputDialog (menu + "\n\n");
 		int opc = this.retornaInteiro(entrada);
-		String especificacao = opcTipo[opc-1];
+		String especificacao = Limpeza.getOpcLimpeza()[opc-1];
 		
 		int codigo = this.retornaInteiro(valores[0]);
 
@@ -56,19 +54,17 @@ public class Supermercado {
 	}
 	
 	public Bebida leBebida (){
-
-		String [] valores = new String [3];
-		String [] nomeVal = {"Código", "Nome", "Fornecedor"};
-		valores = leValores (nomeVal);
-		String [] opcTipo = {"Refrigerante", "Vinho", "Suco"};
+		int j = 1;
+		String [] valores = leValores (Produto.getInfoProduto());
 		String menu = "QUAL O TIPO DE BEBIDA?\n\n" +
-				"Opções:\n" + 
-				"1. "+ opcTipo[0] +"\n" +
-				"2. "+ opcTipo[1] +"\n" +
-				"3. "+ opcTipo[2] +"\n";
+				"Opções:\n"; 
+		for (String i : Bebida.getOpcBebida()) {
+			menu += j + ". "+i+"\n";
+			j+=1;
+		}
 		String entrada = JOptionPane.showInputDialog (menu + "\n\n");
 		int opc = this.retornaInteiro(entrada);
-		String especificacao = opcTipo[opc-1];
+		String especificacao = Bebida.getOpcBebida()[opc-1];
 
 		int codigo = this.retornaInteiro(valores[0]);
 
@@ -77,19 +73,17 @@ public class Supermercado {
 	}
 
 	public Laticinio leLaticinio (){
-
-		String [] valores = new String [3];
-		String [] nomeVal = {"Código", "Nome", "Fornecedor"};
-		valores = leValores (nomeVal);
-		String [] opcTipo = {"Queijos", "Leites", "Iogurtes"};
+		int j = 1;
+		String [] valores = leValores (Produto.getInfoProduto());
 		String menu = "QUAL O TIPO DE LATICÍNIO?\n\n" +
-				"Opções:\n" + 
-				"1. "+ opcTipo[0] +"\n" +
-				"2. "+ opcTipo[1] +"\n" +
-				"3. "+ opcTipo[2] +"\n";
+				"Opções:\n"; 
+		for (String i : Laticinio.getOpcLaticinio()) {
+			menu += j + ". "+i+"\n";
+			j+=1;
+		}
 		String entrada = JOptionPane.showInputDialog (menu + "\n\n");
 		int opc = this.retornaInteiro(entrada);
-		String especificacao = opcTipo[opc-1];
+		String especificacao = Laticinio.getOpcLaticinio()[opc-1];
 
 		int codigo = this.retornaInteiro(valores[0]);
 

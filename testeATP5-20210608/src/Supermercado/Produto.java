@@ -9,6 +9,7 @@ public abstract class Produto implements Serializable {
 	private   String nome;
 	private   String fornecedor;
 	protected String categoria;
+	private static String[] infoProduto = {"Código", "Nome", "Fornecedor"};
 	
 	public Produto(int codigo, String nome, String fornecedor) {
 		this.codigo = codigo;
@@ -23,5 +24,8 @@ public abstract class Produto implements Serializable {
 		retorno += "Fornecedor: " + this.fornecedor   + "\n";
 		retorno += "Categoria: "  + this.categoria  + "\n";
 		return retorno;
+	}
+	public static String[] getInfoProduto() {
+		return infoProduto;
 	}
 }
