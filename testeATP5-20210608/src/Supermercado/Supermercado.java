@@ -178,25 +178,26 @@ public class Supermercado {
 	public void menuSupermercado (){
 
 		String menu = "";
-		String entrada;
-		int    opc1, opc2, opc3;
+		String entrada, entrada2;
+		int opc1, opc2;
+		boolean salvo = false;
 
 		do {
 			menu = "Controle Supermercado\n" +
-					"Opções:\n" + 
-					"1. Entrar Produtos\n" +
+					"Escolha uma das opções abaixo:\n" + 
+					"1. Cadastrar Produtos\n" +
 					"2. Exibir Produtos\n" +
 					"3. Limpar Produtos\n" +
 					"4. Gravar Produtos\n" +
 					"5. Recuperar Produtos\n" +
-					"9. Sair";
+					"9. Sair do programa";
 			entrada = JOptionPane.showInputDialog (menu + "\n\n");
 			opc1 = this.retornaInteiro(entrada);
 
 			switch (opc1) {
 			case 1:// Entrar dados
-				menu = "Entrada de Produtos\n" +
-						"Opções:\n" + 
+				menu = "Cadastro de Produtos\n" +
+						"Qual categoria de produto você gostaria de cadastrar?:\n" + 
 						"1. Limpeza\n" +
 						"2. Bebida\n" +
 						"3. Laticínio\n";
@@ -212,13 +213,13 @@ public class Supermercado {
 				case 3: produtos.add((Produto)leLaticinio());
 				break;
 				default: 
-					JOptionPane.showMessageDialog(null,"Produto para entrada NÃO escolhido!");
+					JOptionPane.showMessageDialog(null,"Opção inválida!");
 				}
 
 				break;
 			case 2: // Exibir dados
 				if (produtos.size() == 0) {
-					JOptionPane.showMessageDialog(null,"Entre com produtos primeiramente");
+					JOptionPane.showMessageDialog(null,"Primeiro cadastre algum produto no sistema.");
 					break;
 				}
 				String dados = "";
@@ -229,31 +230,41 @@ public class Supermercado {
 				break;
 			case 3: // Limpar Dados
 				if (produtos.size() == 0) {
-					JOptionPane.showMessageDialog(null,"Entre com produtos primeiramente");
+					JOptionPane.showMessageDialog(null,"Primeiro cadastre algum produto no sistema.");
 					break;
 				}
 				produtos.clear();
-				JOptionPane.showMessageDialog(null,"Dados LIMPOS com sucesso!");
+				salvo = false;
+				JOptionPane.showMessageDialog(null,"Os produtos foram apagados com sucesso!");
 				break;
 			case 4: // Grava Dados
 				if (produtos.size() == 0) {
-					JOptionPane.showMessageDialog(null,"Entre com produtos primeiramente");
+					JOptionPane.showMessageDialog(null,"Primeiro cadastre algum produto no sistema.");
 					break;
 				}
 				salvaProdutos(produtos);
-				JOptionPane.showMessageDialog(null,"Dados SALVOS com sucesso!");
+				salvo = true;
+				JOptionPane.showMessageDialog(null,"Produtos salvos com sucesso!");
 				break;
 			case 5: // Recupera Dados
 				produtos = recuperaProdutos();
 				if (produtos.size() == 0) {
-					JOptionPane.showMessageDialog(null,"Sem dados para apresentar.");
+					JOptionPane.showMessageDialog(null,"Sem produtos para apresentar.");
 					break;
 				}
-				JOptionPane.showMessageDialog(null,"Dados RECUPERADOS com sucesso!");
+				JOptionPane.showMessageDialog(null,"Os produtos foram recuperados com sucesso!");
 				break;
 			case 9:
-				JOptionPane.showMessageDialog(null,"Fim do aplicativo SUPERMERCADO");
-				break;
+				if(salvo) {
+					JOptionPane.showMessageDialog(null,"Fim do aplicativo SUPERMERCADO");
+				} else {
+					entrada2 = JOptionPane.showInputDialog("Você tem certeza que gostaria de sair sem salvar seus produtos?", "Não");
+					if (entrada2.equals("Não")) {
+						opc1 = 7;
+					} else {
+						JOptionPane.showMessageDialog(null,"Fim do aplicativo SUPERMERCADO");
+					}
+				}
 			}
 		} while (opc1 != 9);
 	}
