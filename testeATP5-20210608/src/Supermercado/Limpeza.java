@@ -5,6 +5,7 @@ public class Limpeza extends Produto{
 	private String tipoLimpeza;
 	private static String[] opcLimpeza = {"Sabão", "Desinfetante", "Detergente"};
 	
+	
 	public Limpeza(int codigo, String nome, String fornecedor, String especificacao) {
 		super(codigo, nome, fornecedor);
 		this.tipoLimpeza = especificacao;

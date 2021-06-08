@@ -5,6 +5,7 @@ public class Bebida extends Produto{
 	private String tipoBebida;
 	private static String[] opcBebida = {"Refrigerante", "Vinho", "Suco"};
 	
+	
 	public Bebida(int codigo, String nome, String fornecedor, String especificacao) {
 		super(codigo, nome, fornecedor);
 		this.tipoBebida = especificacao;

@@ -29,7 +29,6 @@ public class Supermercado {
 
 		for (int i = 0; i < dadosIn.length; i++)
 			dadosOut[i] = JOptionPane.showInputDialog  ("Cadastre o " + dadosIn[i]+ ": \n\n");
-		
 
 		return dadosOut;
 	}
