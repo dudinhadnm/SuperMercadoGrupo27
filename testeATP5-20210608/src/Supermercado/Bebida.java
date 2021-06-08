@@ -12,5 +12,8 @@ public class Bebida extends Produto{
 	public String getBebida() {
 		return this.tipoBebida;
 	}
+	public String toString() {
+		return super.toString() + "Tipo de Bebida: " + this.tipoBebida + "\n";
+	}
 
 }

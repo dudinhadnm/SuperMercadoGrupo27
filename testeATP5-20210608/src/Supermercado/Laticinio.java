@@ -12,5 +12,8 @@ public class Laticinio extends Produto{
 	public String getLaticinio() {
 		return this.tipoLaticinio;
 	}
+	public String toString() {
+		return super.toString() + "Tipo de Laticínio: " + this.tipoLaticinio + "\n";
+	}
 
 }

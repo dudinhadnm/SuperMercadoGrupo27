@@ -12,5 +12,8 @@ public class Limpeza extends Produto{
 	public String getLimpeza() {
 		return this.tipoLimpeza;
 	}
+	public String toString() {
+		return super.toString() + "Tipo de Limpeza: " + this.tipoLimpeza + "\n";
+	}
 
 }

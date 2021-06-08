@@ -28,7 +28,7 @@ public class Supermercado {
 		String [] dadosOut = new String [dadosIn.length];
 
 		for (int i = 0; i < dadosIn.length; i++)
-			dadosOut[i] = JOptionPane.showInputDialog  ("Entre com " + dadosIn[i]+ ": ");
+			dadosOut[i] = JOptionPane.showInputDialog  ("Cadastre o " + dadosIn[i]+ ": \n\n");
 		
 
 		return dadosOut;
@@ -40,8 +40,7 @@ public class Supermercado {
 		String [] nomeVal = {"Código", "Nome", "Fornecedor"};
 		valores = leValores (nomeVal);
 		String [] opcTipo = {"Sabão", "Desinfetante", "Detergente"};
-		String menu = "--Especificação--\n"
-				+ "Escolha de tipo\n" +
+		String menu = "QUAL O TIPO DE PRODUTO DE LIMPEZA?\n\n" +
 				"Opções:\n" + 
 				"1. "+ opcTipo[0] +"\n" +
 				"2. "+ opcTipo[1] +"\n" +
@@ -62,8 +61,7 @@ public class Supermercado {
 		String [] nomeVal = {"Código", "Nome", "Fornecedor"};
 		valores = leValores (nomeVal);
 		String [] opcTipo = {"Refrigerante", "Vinho", "Suco"};
-		String menu = "--Especificação--\n"
-				+ "Escolha de tipo\n" +
+		String menu = "QUAL O TIPO DE BEBIDA?\n\n" +
 				"Opções:\n" + 
 				"1. "+ opcTipo[0] +"\n" +
 				"2. "+ opcTipo[1] +"\n" +
@@ -84,8 +82,7 @@ public class Supermercado {
 		String [] nomeVal = {"Código", "Nome", "Fornecedor"};
 		valores = leValores (nomeVal);
 		String [] opcTipo = {"Queijos", "Leites", "Iogurtes"};
-		String menu = "--Especificação--\n"
-				+ "Escolha de tipo\n" +
+		String menu = "QUAL O TIPO DE LATICÍNIO?\n\n" +
 				"Opções:\n" + 
 				"1. "+ opcTipo[0] +"\n" +
 				"2. "+ opcTipo[1] +"\n" +

@@ -17,28 +17,11 @@ public abstract class Produto implements Serializable {
 	}
 
 	public String toString() {
-		String especificacao;
-		switch(this.categoria) {
-		case "Limpeza":
-			especificacao = ((Limpeza)this).getLimpeza();
-			break;
-		case "Laticínio":
-			especificacao = ((Laticinio)this).getLaticinio();
-			break;
-		case "Bebida":
-			especificacao = ((Bebida)this).getBebida();
-			break;
-		default:
-			especificacao = "categoria não especificada";
-			break;
-		}
 		String retorno = "";
 		retorno += "Codigo: "  	  + this.codigo + "\n";
 		retorno += "Nome: "  	  + this.nome   + "\n";
 		retorno += "Fornecedor: " + this.fornecedor   + "\n";
 		retorno += "Categoria: "  + this.categoria  + "\n";
-		retorno += "Especificação - Tipo de "+ this.categoria + ": "+ especificacao + "\n";
 		return retorno;
 	}
-	//public abstract String soar();
 }
