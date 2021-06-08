@@ -3,6 +3,7 @@ package Supermercado;
 import java.io.Serializable;
 
 public abstract class Produto implements Serializable {
+	
 	private static final long serialVersionUID = 1L;
 	private   int codigo;
 	private   String nome;

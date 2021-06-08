@@ -4,7 +4,7 @@ public class Laticinio extends Produto{
 	private static final long serialVersionUID = 1L;
 	private String tipoLaticinio;
 	private static String[] opcLaticinio = {"Queijos", "Leites", "Iogurtes"};
-	
+
 	
 	public Laticinio(int codigo, String nome, String fornecedor, String especificacao) {
 		super(codigo, nome, fornecedor);
