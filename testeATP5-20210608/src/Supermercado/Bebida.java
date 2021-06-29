@@ -15,6 +15,7 @@ public class Bebida extends Produto {
 		return this.tipoBebida;
 	}
 
+	@Override 
 	public String toString() {
 		return super.toString() + "Tipo de Bebida: " + this.tipoBebida + "\n";
 	}

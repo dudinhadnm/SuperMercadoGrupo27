@@ -8,15 +8,16 @@ public class Laticinio extends Produto {
 	public Laticinio(int codigo, String nome, String fornecedor, String especificacao) {
 		super(codigo, nome, fornecedor);
 		this.tipoLaticinio = especificacao;
-		this.categoria = "Laticinio";
+		this.categoria = "Laticínio";
 	}
 
 	public String getLaticinio() {
 		return this.tipoLaticinio;
 	}
 
+	@Override 
 	public String toString() {
-		return super.toString() + "Tipo de Laticinio: " + this.tipoLaticinio + "\n";
+		return super.toString() + "Tipo de Laticínio: " + this.tipoLaticinio + "\n";
 	}
 
 	public static String[] getOpcLaticinio() {

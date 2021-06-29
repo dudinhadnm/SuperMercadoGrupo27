@@ -3,7 +3,7 @@ package Supermercado;
 public class Limpeza extends Produto {
 	private static final long serialVersionUID = 1L;
 	private String tipoLimpeza;
-	private static String[] opcLimpeza = { "Sabao", "Desinfetante", "Detergente" };
+	private static String[] opcLimpeza = { "Sabão", "Desinfetante", "Detergente" };
 
 	public Limpeza(int codigo, String nome, String fornecedor, String especificacao) {
 		super(codigo, nome, fornecedor);
@@ -14,7 +14,8 @@ public class Limpeza extends Produto {
 	public String getLimpeza() {
 		return this.tipoLimpeza;
 	}
-
+	
+	@Override 
 	public String toString() {
 		return super.toString() + "Tipo de Limpeza: " + this.tipoLimpeza + "\n";
 	}

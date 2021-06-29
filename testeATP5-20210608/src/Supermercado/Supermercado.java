@@ -35,6 +35,7 @@ public class Supermercado {
 
 	public Limpeza leLimpeza() {
 		int j = 1;
+		String especificacao;
 		String[] valores = leValores(Produto.getInfoProduto());
 		String menu = "QUAL O TIPO DE PRODUTO DE LIMPEZA?\n\n" + "Opções:\n";
 		for (String i : Limpeza.getOpcLimpeza()) {
@@ -44,16 +45,21 @@ public class Supermercado {
 
 		String entrada = JOptionPane.showInputDialog(menu + "\n\n");
 		int opc = this.retornaInteiro(entrada);
-		String especificacao = Limpeza.getOpcLimpeza()[opc - 1];
+		if(opc<=Limpeza.getOpcLimpeza().length && opc>0) {
+			especificacao = Limpeza.getOpcLimpeza()[opc - 1];
+			int codigo = this.retornaInteiro(valores[0]);
 
-		int codigo = this.retornaInteiro(valores[0]);
-
-		Limpeza limpeza = new Limpeza(codigo, valores[1], valores[2], especificacao);
-		return limpeza;
+			Limpeza limpeza = new Limpeza(codigo, valores[1], valores[2], especificacao);
+			return limpeza;
+		}else {
+			Limpeza lim = new Limpeza(0, "", "", "");
+			return lim;
+		}
 	}
 
 	public Bebida leBebida() {
 		int j = 1;
+		String especificacao;
 		String[] valores = leValores(Produto.getInfoProduto());
 		String menu = "QUAL O TIPO DE BEBIDA?\n\n" + "Opções:\n";
 		for (String i : Bebida.getOpcBebida()) {
@@ -62,30 +68,41 @@ public class Supermercado {
 		}
 		String entrada = JOptionPane.showInputDialog(menu + "\n\n");
 		int opc = this.retornaInteiro(entrada);
-		String especificacao = Bebida.getOpcBebida()[opc - 1];
+		if(opc<=Bebida.getOpcBebida().length && opc>0) {
+			especificacao = Bebida.getOpcBebida()[opc - 1];
+			int codigo = this.retornaInteiro(valores[0]);
 
-		int codigo = this.retornaInteiro(valores[0]);
-
-		Bebida bebida = new Bebida(codigo, valores[1], valores[2], especificacao);
-		return bebida;
+			Bebida bebida = new Bebida(codigo, valores[1], valores[2], especificacao);
+			return bebida;
+		}else {
+			Bebida beb = new Bebida(0, "", "", "");
+			return beb;
+		}
 	}
 
 	public Laticinio leLaticinio() {
 		int j = 1;
+		String especificacao;
 		String[] valores = leValores(Produto.getInfoProduto());
-		String menu = "QUAL O TIPO DE LATIC�?NIO?\n\n" + "Opções:\n";
+		String menu = "QUAL O TIPO DE LATICÍNIO?\n\n" + "Opções:\n";
 		for (String i : Laticinio.getOpcLaticinio()) {
 			menu += j + ". " + i + "\n";
 			j += 1;
 		}
 		String entrada = JOptionPane.showInputDialog(menu + "\n\n");
 		int opc = this.retornaInteiro(entrada);
-		String especificacao = Laticinio.getOpcLaticinio()[opc - 1];
+		if(opc<=Laticinio.getOpcLaticinio().length && opc>0) {
+			especificacao = Laticinio.getOpcLaticinio()[opc - 1];
+			int codigo = this.retornaInteiro(valores[0]);
 
-		int codigo = this.retornaInteiro(valores[0]);
-
-		Laticinio laticinio = new Laticinio(codigo, valores[1], valores[2], especificacao);
-		return laticinio;
+			Laticinio laticinio = new Laticinio(codigo, valores[1], valores[2], especificacao);
+			return laticinio;
+		}else {
+			Laticinio lat = new Laticinio(0, "", "", "");
+			return lat;
+		}
+		
+		
 	}
 
 	private boolean intValido(String s) {
@@ -189,14 +206,29 @@ public class Supermercado {
 				opc2 = this.retornaInteiro(entrada);
 
 				switch (opc2) {
-				case 1:
-					produtos.add((Produto) leLimpeza());
+				case 1://limpeza
+					Produto lim2 = leLimpeza();
+					if(lim2.getNome() != "") {
+						produtos.add(lim2);
+					}else {
+						JOptionPane.showMessageDialog(null, "Opção inválida!");
+					}
 					break;
-				case 2:
-					produtos.add((Produto) leBebida());
+				case 2://bebida
+					Produto beb2 = leBebida();
+					if(beb2.getNome() != "") {
+						produtos.add(beb2);
+					}else {
+						JOptionPane.showMessageDialog(null, "Opção inválida!");
+					}
 					break;
-				case 3:
-					produtos.add((Produto) leLaticinio());
+				case 3://laticinio
+					Produto lac2 = leLaticinio();
+					if(lac2.getNome() != "") {
+						produtos.add(lac2);
+					}else {
+						JOptionPane.showMessageDialog(null, "Opção inválida!");
+					}
 					break;
 				default:
 					JOptionPane.showMessageDialog(null, "Opção inválida!");

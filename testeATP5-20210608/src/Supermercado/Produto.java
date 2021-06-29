@@ -25,6 +25,10 @@ public abstract class Produto implements Serializable {
 		retorno += "Categoria: " + this.categoria + "\n";
 		return retorno;
 	}
+	
+	public String getNome() {
+		return this.nome;
+	}
 
 	public static String[] getInfoProduto() {
 		return infoProduto;
